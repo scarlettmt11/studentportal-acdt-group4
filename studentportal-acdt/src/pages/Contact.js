@@ -1,23 +1,18 @@
-// created by Dhruti Rathod 9018785
-
 import { useState } from "react";
 import "../css/App.css";
 
 function Contact() {
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: ""
+    message: "",
   });
 
   const [success, setSuccess] = useState("");
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setSuccess("");
   };
 
   const handleSubmit = (e) => {
@@ -29,45 +24,36 @@ function Contact() {
     }
 
     setSuccess("Message sent successfully!");
-
-    setFormData({
-      name: "",
-      email: "",
-      message: ""
-    });
+    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
-    <main className="page-content">
+    <main className="contact-page">
 
-      {/* Keep your existing section */}
-      <h2>Student Resources</h2>
-
-      <div className="card-container">
-        <div className="card">
-          <h3>Study Planning</h3>
-          <p>Organize assignments, deadlines, and course work more effectively.</p>
+      <section className="contact-resources">
+        <h2>Student Resources</h2>
+        <div className="card-container">
+          <div className="card">
+            <h3>Study Planning</h3>
+            <p>Organize assignments, deadlines, and course work more effectively.</p>
+          </div>
+          <div className="card">
+            <h3>Learning Tools</h3>
+            <p>Explore digital tools that support learning and productivity.</p>
+          </div>
+          <div className="card">
+            <h3>Career Preparation</h3>
+            <p>Build confidence with resume and interview preparation ideas.</p>
+          </div>
         </div>
+      </section>
 
-        <div className="card">
-          <h3>Learning Tools</h3>
-          <p>Explore digital tools that support learning and productivity.</p>
-        </div>
-
-        <div className="card">
-          <h3>Career Preparation</h3>
-          <p>Build confidence with resume and interview preparation ideas.</p>
-        </div>
-      </div>
-
-      {/* NEW CONTACT FORM SECTION */}
       <section className="contact-section">
         <h2>Contact Us</h2>
 
-        {success && <p className="success">{success}</p>}
+        {success && <div className="contact-success">{success}</div>}
 
         <form className="contact-form" onSubmit={handleSubmit}>
-
           <label>Name</label>
           <input
             type="text"
@@ -92,10 +78,9 @@ function Contact() {
             value={formData.message}
             onChange={handleChange}
             placeholder="Write your message"
-          ></textarea>
+          />
 
           <button type="submit">Send Message</button>
-
         </form>
       </section>
 

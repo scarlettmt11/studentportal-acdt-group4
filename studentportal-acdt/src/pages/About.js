@@ -8,7 +8,7 @@ function About() {
 
       {/* HERO SECTION */}
       <section className="about-hero">
-        <h1>About StudentPortal TMT</h1>
+        <h1>About StudentPortal-ACDT</h1>
         <p>
           A modern single page application designed to support students with
           resources, productivity tips, and guidance for academic success.
@@ -21,7 +21,7 @@ function About() {
         <div className="about-card">
           <h3>Project Overview</h3>
           <p>
-            StudentPortal TMT is a React-based single page application developed
+            StudentPortal-ACDT is a React-based single page application developed
             as part of a Trends in Web Technology course. It focuses on providing
             a simple, organized, and user-friendly experience for students.
           </p>
